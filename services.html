@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services | Eezee Transit</title>
+  <meta name="description" content="Courier delivery, freight transport, car rentals and bus charters in Nigeria. Every Eezee Transit service explained with honest pricing."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="ET_Logo.png"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+  /* ── SERVICE BLOCKS ── */
+  .svc-block { padding: 104px 0; }
+  .svc-block + .svc-block { border-top: 1px solid var(--border); }
+  .svc-block--alt { background: var(--sky); }
+  .svc-block--alt + .svc-block--alt { border-top: none; }
+
+  .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .svc-grid--flip { direction: rtl; }
+  .svc-grid--flip > * { direction: ltr; }
+
+  /* Content side */
+  .svc-content .label { display: block; margin-bottom: 12px; }
+  .svc-content h2 { margin-bottom: 16px; }
+  .svc-content > p { font-size: 15px; color: var(--subtle); line-height: 1.82; margin-bottom: 28px; }
+  .feat-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 36px; }
+  .feat-item { display: flex; gap: 14px; align-items: flex-start; }
+  .feat-item__icon { width: 32px; height: 32px; border-radius: 7px; background: var(--sky); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .svc-block--alt .feat-item__icon { background: var(--white); }
+  .feat-item__icon svg { width: 15px; height: 15px; color: var(--electric); }
+  .feat-item__body strong { display: block; font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+  .feat-item__body p { font-size: 13.5px; color: var(--subtle); line-height: 1.65; }
+
+  /* Visual side */
+  .svc-visual { position: relative; }
+  .svc-img-wrap {
+    background: #0A162800; border-radius: var(--r-xl);
+    padding: 48px 40px 0; text-align: center;
+    position: relative; overflow: hidden; min-height: 340px;
+    display: flex; align-items: flex-end; justify-content: center;
+  }
+  .svc-img-wrap::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(46,107,230,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46,107,230,.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  .svc-img-wrap img {
+    width: 75%; max-width: 300px; object-fit: contain;
+    position: relative; z-index: 1;
+    filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.34));
+    transition: transform .5s ease;
+  }
+  .svc-img-wrap:hover img { transform: translateY(-10px) scale(1.02); }
+
+  /* Info card overlay */
+  .svc-info-card {
+    position: absolute; bottom: -20px; right: -16px;
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: var(--r-lg); padding: 18px 22px;
+    box-shadow: var(--sh-lg); min-width: 200px;
+  }
+  .svc-info-card__label { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--subtle); margin-bottom: 10px; }
+  .svc-price-row { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--border); }
+  .svc-price-row:last-child { border-bottom: none; }
+  .svc-price-row span { font-size: 12.5px; color: var(--body); }
+  .svc-price-row strong { font-size: 12.5px; font-weight: 700; color: var(--electric); }
+
+  /* Chips row */
+  .chips-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+
+  @media (max-width: 1024px) {
+    .svc-grid { grid-template-columns: 1fr; gap: 44px; }
+    .svc-grid--flip { direction: ltr; }
+    .svc-info-card { right: 12px; bottom: -14px; }
+  }
+  @media (max-width: 600px) {
+    .svc-block { padding: 72px 0; }
+    .svc-info-card { position: static; margin-top: 16px; }
+  }
+  </style>
+</head>
+<body>
+<div id="nav-ph"></div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero__grid"></div>
+  <div class="page-hero__glow"></div>
+  <div class="wrap">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span>Services</span>
+      </nav>
+      <span class="label">What We Offer</span>
+      <h1>Every Transport Need. <span class="hero__h1-keyword">Handled.</span></h1>
+      <p>Whether you need document delivery, cargo transport, vehicle rentals, or bus charter services, Eezee Transit provides efficient, dependable transportation solutions supported by professional service and clear pricing.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 1: COURIER ══ -->
+<div id="courier" class="svc-block">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div class="svc-content reveal">
+        <span class="label">Courier Delivery</span>
+        <h2>Fast, Reliable Parcel and Document Delivery</h2>
+        <p>We dispatch motorbikes for urgent documents, sedans for business parcels, and cargo vans for larger e-commerce and commercial loads. Whether it is a quick document delivery in Lagos or same-day city-wide parcel delivery, we make it happen.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="feat-item__body"><strong>Same-Day Dispatch</strong><p>Book before noon and your parcel moves today. Express slots available for urgent pickups outside of that window.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="feat-item__body"><strong>Door-to-Door Delivery</strong><p>Our courier collects at your address and delivers straight to the recipient. No drop-off points, no middle stops, no guesswork.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+            <div class="feat-item__body"><strong>WhatsApp Updates</strong><p>You and your recipient both receive live status messages so no one is left waiting and wondering where the package is.</p></div>
+          </div>
+        </div>
+        <div class="chips-row">
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Legal documents</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>E-commerce orders</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fashion and clothing</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Medical supplies</span>
+          <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fragile items</span>
+        </div>
+        <button class="btn btn--primary" onclick="openModal()">Book a Courier</button>
+      </div>
+      <div class="svc-visual reveal d1">
+        <div class="svc-img-wrap">
+          <img src="boxes.png" alt="Courier parcels and packages"/>
+        </div>
+        <div class="svc-info-card">
+          <p class="svc-info-card__label">Indicative pricing</p>
+          <div class="svc-price-row"><span>Same area</span><strong>From N1,500</strong></div>
+          <div class="svc-price-row"><span>Cross-island</span><strong>From N2,500</strong></div>
+          <div class="svc-price-row"><span>Express (under 2hrs)</span><strong>From N4,000</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 2: FREIGHT ══ -->
+<div id="freight" class="svc-block svc-block--alt">
+  <div class="wrap">
+    <div class="svc-grid svc-grid--flip">
+      <div class="svc-visual reveal">
+        <div class="svc-img-wrap">
+          <img src="TRUCK.png" alt="Box truck for freight transport"/>
+        </div>
+        <div class="svc-info-card">
+          <p class="svc-info-card__label">Vehicle capacity guide</p>
+          <div class="svc-price-row"><span>Pickup truck</span><strong>Up to 1 tonne</strong></div>
+          <div class="svc-price-row"><span>Cargo van</span><strong>Up to 2 tonnes</strong></div>
+          <div class="svc-price-row"><span>Box truck</span><strong>5 to 10 tonnes</strong></div>
+          <div class="svc-price-row"><span>Flatbed</span><strong>18+ tonnes</strong></div>
+        </div>
+      </div>
+      <div class="svc-content reveal d1">
+        <span class="label">Freight Transport</span>
+        <h2>Move Heavy Loads Without the Headache</h2>
+        <p>When your cargo is too large for a courier and too important to leave to chance, our freight service is the answer. We handle palletized goods, large pallet loads, and long-haul cargo with trucks, lift-gate equipment, and experienced drivers across Nigeria.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <div class="feat-item__body"><strong>Real-Time GPS Monitoring</strong><p>Every freight vehicle is GPS-tracked. Our team monitors the route live and contacts you ahead of any delay before it becomes a problem.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></div>
+            <div class="feat-item__body"><strong>Interstate and Long-Haul Routes</strong><p>We run regular routes between Lagos, Abuja, Port Harcourt, and Ibadan. Volume discounts apply for businesses with consistent shipment frequency.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg></div>
+            <div class="feat-item__body"><strong>Lift-Gate Trucks Available</strong><p>Loading heavy pallets without a forklift on-site is not a problem. Ask for a lift-gate truck when you request your quote.</p></div>
+          </div>
+        </div>
+        <button class="btn btn--primary" onclick="openModal()">Request a Freight Quote</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 3: CAR RENTAL ══ -->
+<div id="rental" class="svc-block">
+  <div class="wrap">
+    <div class="svc-grid">
+      <div class="svc-content reveal">
+        <span class="label">Vehicle Rentals</span>
+        <h2>The Right Vehicle, with a Driver, When You Need It</h2>
+        <p>Renting a vehicle with us means more than just a car. You get a vetted professional who shows up on time, drives safely, and treats your passengers with respect. Hourly or daily rates, no self-drive complications.</p>
+        <p>Choose from sedans and SUVs for business errands, minivans and minibuses for small groups, or full coaches for large events. Every rental includes a licensed driver so you can focus on the journey.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="feat-item__body"><strong>Professional Licensed Drivers</strong><p>Every driver is background-checked and trained. They represent you to your clients and guests, and they know it.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="feat-item__body"><strong>Hourly and Daily Rates</strong><p>Pay for only the time you actually need. Your price is confirmed before the vehicle moves and nothing changes after.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="feat-item__body"><strong>Corporate and Events Packages</strong><p>Airport transfers, staff shuttles, wedding convoys, and event logistics. We coordinate multiple vehicles when the occasion demands it.</p></div>
+          </div>
+        </div>
+        <div class="chips-row">
+          <span class="chip">Sedan</span>
+          <span class="chip">SUV</span>
+          <span class="chip">Minivan</span>
+          <span class="chip">Minibus</span>
+          <span class="chip">Coach</span>
+        </div>
+        <button class="btn btn--primary" onclick="openModal()">Book a Vehicle</button>
+      </div>
+      <div class="svc-visual reveal d1">
+        <div class="svc-img-wrap">
+          <img src="car.png" alt="Sedan for car rental with driver"/>
+        </div>
+        <div class="svc-info-card">
+          <p class="svc-info-card__label">Daily rate guide</p>
+          <div class="svc-price-row"><span>Sedan</span><strong>From N15,000</strong></div>
+          <div class="svc-price-row"><span>SUV / Prado</span><strong>From N25,000</strong></div>
+          <div class="svc-price-row"><span>Minivan (Sienna)</span><strong>From N30,000</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ 4: BUS CHARTER ══ -->
+<div id="bus" class="svc-block svc-block--alt">
+  <div class="wrap">
+    <div class="svc-grid svc-grid--flip">
+      <div class="svc-visual reveal">
+        <div class="svc-img-wrap">
+          <img src="bus.png" alt="Bus for charter and group travel"/>
+        </div>
+        <div class="svc-info-card">
+          <p class="svc-info-card__label">Bus capacity options</p>
+          <div class="svc-price-row"><span>Minibus</span><strong>18 to 30 seats</strong></div>
+          <div class="svc-price-row"><span>Mid-size coach</span><strong>30 to 50 seats</strong></div>
+          <div class="svc-price-row"><span>Full coach</span><strong>50 to 70 seats</strong></div>
+        </div>
+      </div>
+      <div class="svc-content reveal d1">
+        <span class="label">Bus Charter</span>
+        <h2>Group Travel with Zero Logistics Stress</h2>
+        <p>Planning a corporate retreat, a wedding convoy, a church outing, or a staff shuttle? We supply the buses, the drivers, and the punctuality. You handle the event and leave the movement to us.</p>
+        <div class="feat-list">
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="feat-item__body"><strong>Up to 70 Passengers Per Vehicle</strong><p>We carry minibuses from 18 seats and full coaches up to 70 seats. Tell us your head count and we recommend the right option.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+            <div class="feat-item__body"><strong>Multi-Stop Routes</strong><p>We accommodate complex itineraries with multiple pickup points, stopovers, and return legs. Just tell us the plan.</p></div>
+          </div>
+          <div class="feat-item">
+            <div class="feat-item__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <div class="feat-item__body"><strong>Short Notice Available</strong><p>Events sometimes move faster than expected. Call us and we will do everything possible to accommodate tight timelines.</p></div>
+          </div>
+        </div>
+        <div class="chips-row">
+          <span class="chip">Corporate retreats</span>
+          <span class="chip">Wedding convoys</span>
+          <span class="chip">Staff shuttles</span>
+          <span class="chip">Church outings</span>
+          <span class="chip">Airport transfers</span>
+        </div>
+        <button class="btn btn--primary" onclick="openModal()">Book a Bus Charter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band__inner reveal">
+      <span class="label label--white" style="display:block;margin-bottom:14px;">Not Sure Which Service?</span>
+      <h2>Tell Us What You Need.<br>We'll Point You in the Right Direction.</h2>
+      <p>Describe what you are trying to move or where you need to go. Our team will recommend the right service and price it on the spot.</p>
+      <div class="cta-band__actions">
+        <button class="btn btn--primary btn--lg" onclick="openModal()">Get a Quote</button>
+        <a href="contact.html" class="btn btn--ghost btn--lg">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="foot-ph"></div>
+<div id="modal-ph"></div>
+<div id="wa-ph"></div>
+<script src="shared.js"></script>
+</body>
+</html>

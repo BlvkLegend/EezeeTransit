@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us | Eezee Transit</title>
+  <meta name="description" content="Reach Eezee Transit by WhatsApp, phone, or form. We respond to every message and deliver a quote within 30 minutes during business hours."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="ET_Logo.png"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+
+  /* ── CONTACT LAYOUT ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 72px; align-items: start; }
+  .contact-sidebar { position: sticky; top: 120px; }
+  .contact-sidebar .label { display: block; margin-bottom: 12px; }
+  .contact-sidebar h2 { margin-bottom: 14px; }
+  .contact-sidebar > p { font-size: 14.5px; color: var(--subtle); line-height: 1.8; margin-bottom: 28px; }
+
+  .channel-list { display: flex; flex-direction: column; gap: 12px; }
+  .channel {
+    display: flex; gap: 14px; padding: 18px;
+    background: var(--sky); border: 1.5px solid var(--border);
+    border-radius: var(--r); transition: border-color .2s, box-shadow .2s;
+    align-items: flex-start; text-decoration: none;
+  }
+  .channel:hover { border-color: var(--electric); box-shadow: var(--sh-sm); }
+  .channel__icon {
+    width: 40px; height: 40px; border-radius: 9px;
+    background: var(--white); border: 1.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .channel__icon svg { width: 18px; height: 18px; color: var(--electric); }
+  .channel__icon--wa { background: #25D366; border-color: #25D366; }
+  .channel__icon--wa svg { color: var(--white); fill: var(--white); }
+  .channel__tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--subtle); margin-bottom: 3px; }
+  .channel__val { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 2px; }
+  .channel__note { font-size: 12px; color: var(--subtle); }
+
+  /* ── CONTACT FORM ── */
+  .contact-form-card {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: var(--r-xl); padding: 48px;
+    box-shadow: var(--sh-md);
+  }
+  .contact-form-card h2 { font-size: 26px; margin-bottom: 6px; }
+  .contact-form-card > p { font-size: 14px; color: var(--subtle); margin-bottom: 28px; }
+  .contact-success { display: none; text-align: center; padding: 32px 16px; }
+  .contact-success svg { width: 48px; height: 48px; color: var(--electric); margin: 0 auto 16px; }
+  .contact-success h3 { color: var(--ink); margin-bottom: 8px; }
+  .contact-success p { font-size: 14px; color: var(--subtle); }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-q {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; cursor: pointer;
+    font-size: 15px; font-weight: 600; color: var(--ink);
+    background: none; border: none; width: 100%; text-align: left; gap: 16px;
+  }
+  .faq-q svg { width: 18px; height: 18px; color: var(--electric); flex-shrink: 0; transition: transform .3s; }
+  .faq-item.open .faq-q svg { transform: rotate(45deg); }
+  .faq-a { display: none; padding: 0 0 20px; font-size: 14px; color: var(--subtle); line-height: 1.82; }
+  .faq-item.open .faq-a { display: block; }
+
+  @media (max-width: 1024px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-sidebar { position: static; }
+    .contact-form-card { padding: 32px 24px; }
+  }
+  </style>
+</head>
+<body>
+<div id="nav-ph"></div>
+
+<div class="page-hero">
+  <div class="page-hero__grid"></div>
+  <div class="page-hero__glow"></div>
+  <div class="wrap">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span>Contact</span>
+      </nav>
+      <span class="label">Get in Touch</span>
+      <h1>We Are Ready to <span class="hero__h1-keyword">Move</span><br>When You Are</h1>
+      <p>Call, WhatsApp, or fill the form. We respond to every inquiry and have a price for you within 30 minutes during business hours and as quickly as possible outside of them.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT MAIN ══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- SIDEBAR: channels -->
+      <div class="contact-sidebar reveal">
+        <span class="label">Reach Us</span>
+        <h2>Multiple Ways to Get a Fast Response</h2>
+        <p>For urgent deliveries, WhatsApp is always the fastest path. For formal proposals and corporate inquiries, email or the form work best.</p>
+        <div class="channel-list">
+          <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="channel">
+            <div class="channel__icon channel__icon--wa">
+              <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.004 2C6.477 2 2 6.477 2 12c0 1.989.518 3.858 1.425 5.484L2 22l4.644-1.215A9.955 9.955 0 0012.004 22C17.53 22 22 17.523 22 12S17.53 2 12.004 2zm0 18.18a8.164 8.164 0 01-4.17-1.145l-.3-.178-3.1.812.826-3.017-.195-.31A8.18 8.18 0 013.82 12c0-4.514 3.671-8.18 8.184-8.18C16.513 3.82 20.18 7.486 20.18 12c0 4.514-3.667 8.18-8.176 8.18z"/></svg>
+            </div>
+            <div>
+              <p class="channel__tag">WhatsApp</p>
+              <p class="channel__val">+234 800 000 0000</p>
+              <p class="channel__note">Fastest response, typically under 10 minutes</p>
+            </div>
+          </a>
+          <a href="tel:+2348000000000" class="channel">
+            <div class="channel__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .96h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="channel__tag">Phone</p>
+              <p class="channel__val">+234 800 000 0000</p>
+              <p class="channel__note">Monday to Saturday, 7am to 8pm</p>
+            </div>
+          </a>
+          <a href="mailto:hello@eezeetransit.com" class="channel">
+            <div class="channel__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <p class="channel__tag">Email</p>
+              <p class="channel__val">hello@eezeetransit.com</p>
+              <p class="channel__note">Formal inquiries and corporate proposals</p>
+            </div>
+          </a>
+          <div class="channel" style="cursor:default;">
+            <div class="channel__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="channel__tag">Location</p>
+              <p class="channel__val">Lagos, Nigeria</p>
+              <p class="channel__note">Serving Lagos, Abuja, Port Harcourt, Ibadan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM CARD -->
+      <div class="contact-form-card reveal d1">
+        <div id="cFormBody">
+          <h2>Send Us a Message</h2>
+          <p>Describe what you need and someone from our team will respond within 30 minutes with a quote or next steps.</p>
+          <div class="form-group">
+            <label class="form-label">Service</label>
+            <select class="form-input form-select" id="cService">
+              <option value="">Select a service</option>
+              <option>Courier Delivery</option>
+              <option>Freight Transport</option>
+              <option>Car Rental with Driver</option>
+              <option>Bus Charter</option>
+              <option>Corporate Account</option>
+              <option>Career Inquiry</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input class="form-input" type="text" placeholder="Full name" id="cName"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number</label>
+              <input class="form-input" type="tel" placeholder="+234 800 000 0000" id="cPhone"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email (optional)</label>
+            <input class="form-input" type="email" placeholder="you@company.com" id="cEmail"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Your Message</label>
+            <textarea class="form-input" rows="5" id="cMsg" style="resize:vertical;" placeholder="Describe your route, load size, date, and any special requirements. The more detail you give, the faster we can price it."></textarea>
+          </div>
+          <button class="btn btn--primary btn--lg" style="width:100%;justify-content:center;" onclick="submitContact()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+          <p class="form-note" style="margin-top:12px;">We respond to every message and never share your details with third parties.</p>
+        </div>
+        <div class="contact-success" id="cSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Message Received</h3>
+          <p>Thank you for reaching out. A member of our team will contact you within 30 minutes during business hours to follow up on your request.</p>
+          <button class="btn btn--outline-dark" style="margin-top:22px;" onclick="resetContact()">Send Another Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sh sh--center reveal" style="margin-bottom:48px;">
+      <span class="label">Common Questions</span>
+      <h2>Things People Ask Before They Book</h2>
+    </div>
+    <div style="max-width:720px;margin:0 auto;" class="reveal">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">How quickly can you arrange a delivery?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">For courier deliveries within Lagos, same-day dispatch is available for bookings made before noon. Express slots are also available outside that window for urgent jobs. For freight and vehicle rentals, we recommend at least 24 hours notice, though we regularly work with shorter timelines. Call or WhatsApp to confirm availability.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do your drivers have GPS tracking?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">Most of our vehicles are fitted with real-time GPS units monitored by our dispatch team throughout every journey. We also have dashcams on most vehicles for driver accountability and cargo security. If live location updates are critical for your booking, mention it when you request your quote.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do the rental vehicles come with drivers included?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">Yes. All of our rental vehicles include a professional, vetted driver in the price. We do not offer self-drive at this time. Every driver is background-checked, licensed, and trained to be punctual and courteous on every single booking.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">How is your pricing calculated?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">Pricing depends on the service type, distance, package size or passenger count, and the vehicle required. We give you a firm, all-inclusive price before any vehicle moves. What you are quoted is what you pay. No add-ons after the fact. Corporate clients with high volume can negotiate rates through our account management team.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Do you handle interstate deliveries?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">Yes. We run regular freight routes between Lagos and major cities including Abuja, Port Harcourt, and Ibadan. Interstate freight requires at least 24 hours advance notice. Contact us with your route and cargo details and we will confirm availability and pricing the same day.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">Can I set up a corporate or recurring account?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          <div class="faq-a">Absolutely. If your business needs regular deliveries, scheduled rentals, or a dedicated logistics arrangement, reach out through the form or email us directly. We will set up a call to understand your requirements and put together a tailored package with monthly invoicing, priority dispatch, and a dedicated account contact.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band__inner reveal">
+      <span class="label label--white" style="display:block;margin-bottom:14px;">Still Have Questions?</span>
+      <h2>Our Team Is Available Seven Days a Week</h2>
+      <p>WhatsApp is the fastest route. But whichever way you reach out, a real person will respond.</p>
+      <div class="cta-band__actions">
+        <a href="https://wa.me/2348000000000" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+          <svg viewBox="0 0 24 24" fill="currentColor" style="width:17px;height:17px;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/><path d="M12.004 2C6.477 2 2 6.477 2 12c0 1.989.518 3.858 1.425 5.484L2 22l4.644-1.215A9.955 9.955 0 0012.004 22C17.53 22 22 17.523 22 12S17.53 2 12.004 2zm0 18.18a8.164 8.164 0 01-4.17-1.145l-.3-.178-3.1.812.826-3.017-.195-.31A8.18 8.18 0 013.82 12c0-4.514 3.671-8.18 8.184-8.18C16.513 3.82 20.18 7.486 20.18 12c0 4.514-3.667 8.18-8.176 8.18z"/></svg>
+          Chat on WhatsApp
+        </a>
+        <button class="btn btn--ghost btn--lg" onclick="openModal()">Request a Quote</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="foot-ph"></div>
+<div id="modal-ph"></div>
+<div id="wa-ph"></div>
+<script src="shared.js"></script>
+<script>
+function submitContact() {
+  const name    = document.getElementById('cName').value.trim();
+  const phone   = document.getElementById('cPhone').value.trim();
+  const service = document.getElementById('cService').value;
+  if (!name || !phone || !service) {
+    alert('Please fill in your name, phone number, and select a service.');
+    return;
+  }
+  document.getElementById('cFormBody').style.display = 'none';
+  document.getElementById('cSuccess').style.display  = 'block';
+}
+function resetContact() {
+  ['cName','cPhone','cEmail','cMsg'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('cService').value = '';
+  document.getElementById('cFormBody').style.display = 'block';
+  document.getElementById('cSuccess').style.display  = 'none';
+}
+</script>
+</body>
+</html>

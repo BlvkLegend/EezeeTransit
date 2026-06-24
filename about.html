@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Eezee Transit</title>
+  <meta name="description" content="Eezee Transit is built on one idea: logistics and transport in Nigeria should be reliable, transparent, and fairly priced. This is our story."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/png" href="ET_Logo.png"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+
+  /* ── STORY ── */
+  .story-split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+  .story-content .label { display: block; margin-bottom: 12px; }
+  .story-content h2 { margin-bottom: 20px; }
+  .story-content p { font-size: 15px; color: var(--subtle); line-height: 1.85; margin-bottom: 18px; }
+  .story-pull {
+    font-family: 'DM Serif Display', serif; font-style: italic;
+    font-size: clamp(19px, 2.2vw, 24px); color: var(--navy);
+    line-height: 1.45; padding: 24px 28px;
+    border-left: 3px solid var(--electric);
+    background: var(--sky); border-radius: 0 var(--r) var(--r) 0;
+    margin: 28px 0;
+  }
+
+  /* Sticky visual side */
+  .story-visual { position: sticky; top: 120px; }
+  .mission-block {
+    background: linear-gradient(135deg, var(--ink) 0%, var(--navy) 100%);
+    border-radius: var(--r-xl); padding: 36px; margin-bottom: 16px;
+    position: relative; overflow: hidden;
+  }
+  .mission-block::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(46,107,230,.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(46,107,230,.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .mission-block .label { color: var(--muted); position: relative; z-index: 1; }
+  .mission-block p { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.8; position: relative; z-index: 1; }
+  .values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .value-item {
+    background: var(--sky); border: 1.5px solid var(--border);
+    border-radius: var(--r); padding: 18px;
+  }
+  .value-item h4 { font-size: 14px; margin-bottom: 5px; }
+  .value-item p { font-size: 12.5px; color: var(--subtle); line-height: 1.55; }
+
+  /* ── NUMBERS BAND ── */
+  .num-band { padding: 72px 0; }
+  .num-row { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .num-item { text-align: center; padding: 0 24px; border-right: 1px solid rgba(255,255,255,.07); }
+  .num-item:last-child { border-right: none; }
+  .num-big { font-size: 52px; font-weight: 800; letter-spacing: -3px; color: var(--white); line-height: 1; }
+  .num-big span { font-size: 28px; color: var(--muted); letter-spacing: 0; }
+  .num-label { font-size: 13px; color: rgba(255,255,255,.45); margin-top: 8px; line-height: 1.5; }
+
+  /* ── TEAM ── */
+  .team-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .team-card {
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: var(--r-xl); overflow: hidden;
+    transition: box-shadow .25s, transform .25s;
+  }
+  .team-card:hover { box-shadow: var(--sh-lg); transform: translateY(-4px); }
+  .team-card__top {
+    height: 152px; background: var(--sky);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'DM Serif Display', serif; font-size: 52px;
+    color: var(--navy); position: relative; overflow: hidden;
+  }
+  .team-card__top::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+    background: linear-gradient(to top, rgba(239,244,255,1) 0%, transparent 100%);
+  }
+  .team-card__body { padding: 22px; }
+  .team-card__body h3 { font-size: 17px; margin-bottom: 3px; }
+  .team-card__role { font-size: 12.5px; color: var(--electric); font-weight: 700; margin-bottom: 10px; }
+  .team-card__body p { font-size: 13px; color: var(--subtle); line-height: 1.65; }
+
+  /* ── CAREERS ── */
+  .careers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+  .careers-content .label { display: block; margin-bottom: 12px; }
+  .careers-content h2 { margin-bottom: 16px; }
+  .careers-content p { font-size: 15px; color: var(--subtle); line-height: 1.8; margin-bottom: 28px; }
+  .role-list { display: flex; flex-direction: column; gap: 12px; }
+  .role-card {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px; background: var(--white);
+    border: 1.5px solid var(--border); border-radius: var(--r);
+    transition: border-color .2s, box-shadow .2s;
+    gap: 16px;
+  }
+  .role-card:hover { border-color: var(--electric); box-shadow: var(--sh-sm); }
+  .role-card h4 { font-size: 14px; margin-bottom: 3px; }
+  .role-card p { font-size: 12px; color: var(--subtle); }
+  .role-badge { font-size: 10.5px; font-weight: 700; padding: 4px 10px; border-radius: 100px; background: rgba(46,107,230,.1); color: var(--electric); white-space: nowrap; flex-shrink: 0; }
+
+  @media (max-width: 1024px) {
+    .story-split { grid-template-columns: 1fr; gap: 48px; }
+    .story-visual { position: static; }
+    .num-row { grid-template-columns: 1fr 1fr; }
+    .num-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 20px 0; }
+    .num-item:last-child { border-bottom: none; }
+    .team-row { grid-template-columns: 1fr 1fr; }
+    .careers-grid { grid-template-columns: 1fr; gap: 48px; }
+  }
+  @media (max-width: 640px) {
+    .team-row { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+    .num-row { grid-template-columns: 1fr; }
+  }
+  </style>
+</head>
+<body>
+<div id="nav-ph"></div>
+
+<div class="page-hero">
+  <div class="page-hero__grid"></div>
+  <div class="page-hero__glow"></div>
+  <div class="wrap">
+    <div class="page-hero__inner">
+      <nav class="breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        <span>About</span>
+      </nav>
+      <span class="label">Our Story</span>
+      <h1>Built to <span class="hero__h1-keyword">Move</span><br>Nigeria Forward</h1>
+      <p>We started Eezee Transit because Nigerian businesses deserved a logistics partner that showed up on time, charged a fair price, and picked up the phone when something went wrong. That is still every single thing we do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ STORY ══ -->
+<section class="section">
+  <div class="wrap">
+    <div class="story-split">
+      <div class="story-content reveal">
+        <span class="label">Who We Are</span>
+        <h2>A Company Built on One Idea</h2>
+        <p>Eezee Transit was founded in Lagos with a straightforward idea: the logistics and transport market in Nigeria had plenty of options but a real shortage of consistency. Pickups happened late. Prices changed at the last moment. Customers were left guessing.</p>
+        <p>We set out to fix that by putting three things at the centre of every job: vetted drivers, GPS-equipped vehicles, and direct communication at every step. Not as premium add-ons. As the baseline.</p>
+        <blockquote class="story-pull">Reliability is not a premium feature. It is the least a business should expect from any transport partner.</blockquote>
+        <p>Today we handle courier deliveries, freight transport, car and bus rentals, and corporate logistics across Lagos and major Nigerian routes. Every service is backed by the same standard regardless of job size.</p>
+        <p>We are a small team with big standards. We would rather do fewer jobs perfectly than many jobs carelessly. That philosophy is why clients come back.</p>
+      </div>
+      <div class="story-visual reveal d1">
+        <div class="mission-block">
+          <span class="label">Our Mission</span>
+          <p>To make logistics and transport in Nigeria predictable, professional, and affordable for every business and individual who needs to move something from one place to another.</p>
+        </div>
+        <div class="values-grid">
+          <div class="value-item"><h4>Reliability</h4><p>We show up when we say we will. Every time, without exception.</p></div>
+          <div class="value-item"><h4>Transparency</h4><p>The price we quote is the price you pay. No surprises after the job.</p></div>
+          <div class="value-item"><h4>Safety</h4><p>GPS, dashcams, and vetted drivers on every booking we take.</p></div>
+          <div class="value-item"><h4>Respect</h4><p>For your cargo, your time, your budget, and your trust in us.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NUMBERS ══ -->
+<div class="section--dark num-band">
+  <div class="wrap">
+    <div class="sh sh--center sh--dark reveal" style="margin-bottom:48px;">
+      <span class="label label--light">By the Numbers</span>
+      <h2>What We Have Achieved So Far</h2>
+    </div>
+    <div class="num-row">
+      <div class="num-item reveal"><div class="num-big"><span class="count-value" data-count-target="1000">1,000</span><span>+</span></div><div class="num-label">Deliveries and rentals completed</div></div>
+      <div class="num-item reveal d1"><div class="num-big"><span class="count-value" data-count-target="9">9</span><span>+</span></div><div class="num-label">Vehicle classes across the fleet</div></div>
+      <div class="num-item reveal d2"><div class="num-big"><span class="count-value" data-count-target="98">98</span><span>%</span></div><div class="num-label">On-time delivery and pickup rate</div></div>
+      <div class="num-item reveal d3"><div class="num-big"><span class="count-value" data-count-target="30">30</span><span>min</span></div><div class="num-label">Average quote turnaround time</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ TEAM ══ -->
+<section class="section section--alt">
+  <div class="wrap">
+    <div class="sh sh--center reveal">
+      <span class="label">The Team</span>
+      <h2>The People Behind Every Delivery</h2>
+      <p class="sh__sub">A small, focused team with one job: making sure your goods or passengers arrive safely, on time, and without drama.</p>
+    </div>
+    <div class="team-row">
+      <div class="team-card reveal">
+        <div class="team-card__top">AO</div>
+        <div class="team-card__body">
+          <h3>Ayo Okafor</h3>
+          <p class="team-card__role">Co-Founder, Operations</p>
+          <p>Ayo oversees fleet management and daily operations, making sure every vehicle is deployed efficiently and every delivery meets our standards.</p>
+        </div>
+      </div>
+      <div class="team-card reveal d1">
+        <div class="team-card__top">TB</div>
+        <div class="team-card__body">
+          <h3>Tunde Balogun</h3>
+          <p class="team-card__role">Co-Founder, Business Development</p>
+          <p>Tunde manages client relationships, corporate accounts, and the partnerships that let us serve businesses across Lagos and beyond.</p>
+        </div>
+      </div>
+      <div class="team-card reveal d2">
+        <div class="team-card__top">CF</div>
+        <div class="team-card__body">
+          <h3>Chisom Femi</h3>
+          <p class="team-card__role">Head of Customer Experience</p>
+          <p>Chisom leads bookings, client communication, and follow-ups. If you have reached us on WhatsApp, her team responded.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAREERS ══ -->
+<section id="careers" class="section">
+  <div class="wrap">
+    <div class="careers-grid">
+      <div class="careers-content reveal">
+        <span class="label">Careers</span>
+        <h2>Work with a Team That Is Going Places</h2>
+        <p>We are growing and we are always interested in people who care about doing the job properly. Whether you drive, coordinate, or want to help build a better logistics company in Nigeria, reach out.</p>
+        <a href="contact.html" class="btn btn--primary">Send Us Your CV</a>
+      </div>
+      <div class="reveal d1">
+        <div class="role-list">
+          <div class="role-card">
+            <div><h4>Professional Driver (Sedan / SUV)</h4><p>Lagos based. Valid licence required.</p></div>
+            <span class="role-badge">Open</span>
+          </div>
+          <div class="role-card">
+            <div><h4>Logistics Coordinator</h4><p>Bookings, dispatch, and client communication.</p></div>
+            <span class="role-badge">Open</span>
+          </div>
+          <div class="role-card">
+            <div><h4>Freight Driver (Box Truck)</h4><p>Interstate routes. Experience essential.</p></div>
+            <span class="role-badge">Open</span>
+          </div>
+          <div class="role-card">
+            <div><h4>Sales and Account Executive</h4><p>Build and manage corporate client relationships.</p></div>
+            <span class="role-badge">Open</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="wrap">
+    <div class="cta-band__inner reveal">
+      <span class="label label--white" style="display:block;margin-bottom:14px;">Work With Us</span>
+      <h2>Let Us Move Something for You</h2>
+      <p>Whether it is your first delivery with us or you are ready to set up a corporate account, we are glad you are here.</p>
+      <div class="cta-band__actions">
+        <button class="btn btn--primary btn--lg" onclick="openModal()">Get a Free Quote</button>
+        <a href="contact.html" class="btn btn--ghost btn--lg">Get in Touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="foot-ph"></div>
+<div id="modal-ph"></div>
+<div id="wa-ph"></div>
+<script src="shared.js"></script>
+</body>
+</html>
