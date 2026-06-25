@@ -303,56 +303,75 @@
   }
 
   /* ── SERVICES SECTION ── */
-  /* 2-col asymmetric: big feature left, two small right */
-  .services-asymmetric { display: grid; grid-template-columns: 1.4fr 1fr; gap: 20px; }
-  .svc-feature {
-    background: var(--ink); border-radius: var(--r-xl);
-    overflow: hidden; position: relative;
-    display: flex; flex-direction: column; justify-content: flex-end;
-    min-height: 480px;
+  /* Split layout: content left, 2x2 grid right */
+  .svc-split { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px; 
+    align-items: flex-start;
   }
-  .svc-feature__img {
-    position: absolute; inset: 0;
-    display: flex; align-items: flex-end; justify-content: center;
-    padding-bottom: 0; pointer-events: none;
+  
+  .svc-grid-4 { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
-  .svc-feature__img img {
-    width: 72%; object-fit: contain;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,.5));
-    animation: imgFloat 5s ease-in-out infinite;
-  }
-  @keyframes imgFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-  .svc-feature__overlay {
-    background: linear-gradient(to top, rgba(10,22,40,.95) 0%, rgba(10,22,40,.5) 55%, transparent 100%);
-    position: absolute; inset: 0;
-  }
-  .svc-feature__body { position: relative; z-index: 1; padding: 32px; }
-  .svc-feature__tag {
-    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 2px;
-    text-transform: uppercase; color: var(--electric); background: rgba(46,107,230,.15);
-    border: 1px solid rgba(46,107,230,.25); padding: 4px 10px; border-radius: 100px; margin-bottom: 12px;
-  }
-  .svc-feature__body h3 { font-size: 22px; color: var(--white); margin-bottom: 8px; }
-  .svc-feature__body p { font-size: 14px; color: rgba(255,255,255,.6); line-height: 1.65; margin-bottom: 20px; max-width: 320px; }
-  .svc-feature__link { display: inline-flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 600; color: var(--muted); transition: gap .2s, color .2s; }
-  .svc-feature__link:hover { gap: 12px; color: var(--white); }
-  .svc-feature__link svg { width: 15px; height: 15px; }
-
-  .svc-stack { display: flex; flex-direction: column; gap: 20px; }
+  
   .svc-card {
-    background: var(--sky); border: 1.5px solid var(--border);
-    border-radius: var(--r-xl); padding: 28px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    flex: 1; position: relative; overflow: hidden;
-    transition: border-color .25s, box-shadow .25s;
+    background: var(--sky); 
+    border: 1.5px solid var(--border);
+    border-radius: var(--r-xl); 
+    padding: 28px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    position: relative; 
+    overflow: hidden;
+    transition: border-color .25s, box-shadow .25s, transform .25s;
+    min-height: 280px;
   }
-  .svc-card:hover { border-color: var(--electric); box-shadow: var(--sh-md); }
-  .svc-card__img { width: 80px; object-fit: contain; margin-bottom: 16px; }
-  .svc-card h3 { font-size: 18px; margin-bottom: 8px; }
-  .svc-card p { font-size: 13.5px; color: var(--subtle); line-height: 1.65; margin-bottom: 18px; }
-  .svc-card__link { font-size: 13px; font-weight: 600; color: var(--electric); display: inline-flex; align-items: center; gap: 5px; transition: gap .2s; }
+  .svc-card:hover { 
+    border-color: var(--electric); 
+    box-shadow: var(--sh-md);
+    transform: translateY(-4px);
+  }
+  
+  .svc-card__img { 
+    width: 64px; 
+    height: 64px;
+    object-fit: contain; 
+    margin-bottom: 16px;
+    flex-shrink: 0;
+  }
+  .svc-card h3 { 
+    font-size: 16px; 
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.25;
+    color: var(--ink);
+  }
+  .svc-card p { 
+    font-size: 13px; 
+    color: var(--subtle); 
+    line-height: 1.6; 
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .svc-card__link { 
+    font-size: 12.5px; 
+    font-weight: 600; 
+    color: var(--electric); 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 5px; 
+    transition: gap .2s;
+    margin-top: auto;
+  }
   .svc-card__link:hover { gap: 9px; }
   .svc-card__link svg { width: 14px; height: 14px; }
+  
+  .svc-content h2 { margin-bottom: 14px; }
+  .svc-content > p { font-size: 15px; color: var(--subtle); line-height: 1.78; margin-bottom: 28px; }
 
   /* ── NUMBERS / IMPACT ── */
   .numbers-row { display: grid; grid-template-columns: repeat(4, 1fr); }
@@ -431,9 +450,8 @@
     .hero__inner { grid-template-columns: 1fr; gap: 48px; }
     .hero__card-group { display: none; }
     .hero__proof { gap: 24px; flex-wrap: wrap; }
-    .services-asymmetric { grid-template-columns: 1fr; }
-    .svc-feature { min-height: 360px; }
-    .svc-stack { flex-direction: row; }
+    .svc-split { grid-template-columns: 1fr; gap: 48px; }
+    .svc-grid-4 { gap: 16px; }
     .numbers-row { grid-template-columns: 1fr 1fr; }
     .n-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
     .how-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -445,7 +463,7 @@
     .hero { padding: 130px 0 72px; }
     .hero__vehicle-grid { grid-template-columns: 1fr; }
     .hero__input-group { grid-template-columns: 1fr; }
-    .svc-stack { flex-direction: column; }
+    .svc-grid-4 { grid-template-columns: 1fr; }
     .why-cards { grid-template-columns: 1fr; }
     .testi-row { grid-template-columns: 1fr; }
     .numbers-row { grid-template-columns: 1fr 1fr; }
@@ -565,52 +583,66 @@
 ══════════════════════════════ -->
 <section class="section">
   <div class="wrap">
-    <div class="sh reveal">
-      <span class="label">What We Do</span>
-      <h2>Every Transport Need.<br>One Reliable Company.</h2>
-      <p class="sh__sub">We built a catalog that covers every job size so you never have to call three different companies to get one thing done.</p>
-    </div>
-    <div class="services-asymmetric">
-      <!-- Feature card: Freight (truck image) -->
-      <div class="svc-feature reveal">
-        <div class="svc-feature__img">
-          <img src="TRUCK.png" alt="Box truck for freight transport"/>
-        </div>
-        <div class="svc-feature__overlay"></div>
-        <div class="svc-feature__body">
-          <span class="svc-feature__tag">Freight Transport</span>
-          <h3>Move Heavy Loads Without the Headache</h3>
-          <p>Box trucks, flatbeds, and cargo vans for bulk shipments and interstate freight. GPS-monitored from loading to delivery.</p>
-          <a href="services.html#freight" class="svc-feature__link">
-            View freight services
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
+
+    <div class="svc-split">
+      
+      <!-- Left: Content -->
+      <div class="svc-content reveal">
+        <span class="label">What We Do</span>
+        <h2>Every Transport Need.<br>Handled by One Team.</h2>
+        <p>From urgent same-day delivery to heavy freight and group charters, we match the right vehicle and driver to every job.</p>
+        <a href="services.html" class="btn btn--primary">See All Services</a>
       </div>
-      <!-- Stack: two smaller cards -->
-      <div class="svc-stack">
-        <div class="svc-card reveal d1">
-          <img src="car.png" alt="Sedan for rental" class="svc-card__img"/>
-          <h3>Car and Bus Rentals</h3>
-          <p>Sedans, SUVs, minibuses, and coaches with vetted drivers included. Hourly or daily, no self-drive faff.</p>
-          <a href="services.html#rental" class="svc-card__link">
-            Book a vehicle <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-        <div class="svc-card reveal d2">
-          <img src="boxes.png" alt="Packages and courier" class="svc-card__img"/>
-          <h3>Courier and Parcel Delivery</h3>
-          <p>Same-day dispatch for documents, parcels, and e-commerce orders across Lagos. WhatsApp updates throughout.</p>
+
+      <!-- Right: 2x2 Grid -->
+      <div class="svc-grid-4">
+
+        <div class="svc-card reveal d1 in-view">
+          <img src="boxes.png" alt="Courier Delivery" class="svc-card__img">
+          <h3>Courier & Parcel Delivery</h3>
+          <p>Fast local deliveries with real-time updates from pickup to drop-off.</p>
           <a href="services.html#courier" class="svc-card__link">
-            Book a courier <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            Book Courier
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </a>
         </div>
+
+        <div class="svc-card reveal d2 in-view">
+          <img src="TRUCK.png" alt="Freight Transport" class="svc-card__img">
+          <h3>Freight Transport</h3>
+          <p>Reliable movement of bulk goods and large shipments across cities and states.</p>
+          <a href="services.html#freight" class="svc-card__link">
+            View Freight Services
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="svc-card reveal d3 in-view">
+          <img src="car.png" alt="Car Rental" class="svc-card__img">
+          <h3>Car & SUV Rentals with Drivers</h3>
+          <p>Flexible hourly and daily hire options with experienced, vetted drivers.</p>
+          <a href="services.html#rental" class="svc-card__link">
+            Book a Car
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
+        <div class="svc-card reveal d4 in-view">
+          <img src="bus.png" alt="Bus Charter" class="svc-card__img">
+          <h3>Bus Charter & Group Transport</h3>
+          <p>Ideal for corporate events, staff transport, weddings, and group travel.</p>
+          <a href="services.html#rental" class="svc-card__link">
+            Book a Bus
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
+
       </div>
+
     </div>
-    <div style="text-align:center;margin-top:36px;" class="reveal">
-      <a href="services.html" class="btn btn--outline-dark">See All Services</a>
-    </div>
+
   </div>
+</section>
 </section>
 
 <!-- ══════════════════════════════
